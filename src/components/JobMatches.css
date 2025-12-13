@@ -1,0 +1,345 @@
+/* JobMatches.css — Revised to match your screenshot exactly
+   Overwrite previous JobMatches.css with this file.
+*/
+
+/* ---------- Theme variables ---------- */
+:root{
+  --bg-1: #05080a;               /* page background */
+  --bg-2: #0b0f13;               /* dark panels */
+  --muted: #9aa6b0;              /* muted text */
+  --title-cyan: #33f0e0;         /* top header title color (teal/cyan) */
+  --title-cyan-strong: #1fb7ff;  /* accent used for icons/links */
+  --ai-green: #6affe6;           /* AI Powered badge green */
+  --card-glow-cyan: rgba(15,187,255,0.18); /* outer card glow */
+  --card-border-cyan: rgba(15,187,255,0.28);/* stronger cyan border */
+  --nearwhite-blue: #eef9ff;     /* near-white bluish for headings */
+  --chip-green: linear-gradient(90deg,#4df3b3,#2ee6b8);
+  --chip-muted: rgba(255,255,255,0.04);
+}
+
+/* ---------- Page / Container ---------- */
+.matches-page {
+  background: linear-gradient(180deg, var(--bg-1) 0%, #061019 60%);
+  min-height: 100vh;
+  padding: 72px 20px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #e9f2f7;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.matches-container {
+  width: 95%;
+  max-width: 1060px;
+  box-sizing: border-box;
+  padding-left: 34px;   /* KEY: aligns header text to card inner padding */
+  padding-right: 34px;
+}
+
+/* ---------- Header ---------- */
+.matches-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom:20px;
+}
+
+/* left block groups Go Back + titles so they share the same column */
+.mh-left {
+  display:flex;
+  gap:18px;
+  align-items:center;
+  min-width:0; /* allow wrapping on small screens */
+}
+
+/* GO BACK button (match screenshot) */
+.back-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color: var(--muted);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+  padding:7px 12px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:0.86rem;
+  cursor:pointer;
+  transition: all .15s ease;
+}
+.back-btn i { color: var(--title-cyan-strong); font-size:0.95rem; }
+.back-btn:hover {
+  color: var(--nearwhite-blue);
+  box-shadow: 0 8px 30px rgba(15,187,255,0.06);
+}
+
+/* Title & subtitle — LEFT aligned to match card */
+.mh-title-block { min-width:0; }
+.mh-title {
+  margin:0;
+  font-size:1.15rem;               /* tuned to match screenshot */
+  font-weight:700;
+  color: var(--title-cyan);
+  text-shadow: 0 0 18px rgba(31,183,255,0.06);
+  letter-spacing: .1px;
+}
+.mh-sub {
+  margin:4px 0 0;
+  color: var(--muted);
+  font-size:0.88rem;
+  max-width:720px;
+}
+
+/* Right tiny badges: green AI Powered & matches found */
+.mh-right {
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex:0 0 auto;
+}
+.ai-badge {
+  background: rgba(10,14,12,0.55);
+  color:var(--ai-green);
+  padding:6px 10px;
+  border-radius:12px;
+  font-weight:700;
+  font-size:0.78rem;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid rgba(20,255,200,0.06);
+  box-shadow: 0 6px 22px rgba(106,255,230,0.03);
+}
+.matches-found {
+  background: rgba(255,255,255,0.02);
+  color:var(--muted);
+  padding:6px 10px;
+  border-radius:10px;
+  font-size:0.78rem;
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* ---------- Summary stat boxes (Perfect Matches etc.) ---------- */
+.summary-row {
+  display:flex;
+  gap:18px;
+  margin:18px 0 22px;
+  flex-wrap:wrap;
+}
+
+.stat-card {
+  flex:1 1 0;
+  min-width:210px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.0));
+  border-radius:14px;
+  padding:18px 16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 12px 28px rgba(4,8,10,0.6), 0 0 28px rgba(10,20,30,0.02);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.stat-card:hover { transform: translateY(-6px); box-shadow: 0 18px 44px rgba(6,12,18,0.72), 0 0 36px rgba(15,187,255,0.05); }
+
+.stat-icon { font-size:18px; color:var(--title-cyan-strong); margin-bottom:6px; }
+.stat-value { font-size:1.35rem; font-weight:800; color:#ffffff; margin-bottom:6px; }
+.stat-label { color:var(--muted); font-size:0.86rem; }
+
+/* ---------- Job cards list ---------- */
+.cards-list { display:flex; flex-direction:column; gap:22px; }
+
+/* big card outer look — bluish border + glow similar to design */
+.job-card {
+  background: linear-gradient(180deg, rgba(8,10,12,0.76), rgba(11,13,15,0.84));
+  border-radius:20px;
+  padding:10px; /* outer padding to show glow border */
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.6),
+    0 0 40px var(--card-glow-cyan);
+  transition: transform .18s ease, box-shadow .22s ease;
+  border: 1px solid rgba(255,255,255,0.02);
+  position:relative;
+  overflow:visible;
+}
+
+/* inner card container has the interior background and the stronger cyan border */
+.job-card-inner {
+  background: linear-gradient(180deg, rgba(14,16,20,0.9), rgba(10,12,14,0.95));
+  border-radius:16px;
+  padding:22px 22px 18px 22px;
+  border: 1px solid var(--card-border-cyan); /* bluish border */
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+/* hover lift */
+.job-card:hover { transform: translateY(-6px); box-shadow: 0 18px 46px rgba(0,0,0,0.68), 0 0 60px var(--card-glow-cyan); }
+
+/* header row of the card */
+.header-row { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; flex-wrap:wrap; }
+.job-left { min-width:0; max-width:calc(100% - 150px); }
+.job-title {
+  margin:0;
+  font-size:1.08rem;       /* tuned: match screenshot font size */
+  font-weight:800;
+  color: var(--nearwhite-blue);  /* near-white bluish */
+  line-height:1.06;
+}
+.company-link {
+  display:inline-block;
+  margin-top:8px;
+  color: var(--title-cyan-strong); /* bluish link color */
+  font-weight:700;
+  font-size:0.92rem;
+  text-decoration:none;
+}
+
+/* meta row below company */
+.meta-row { margin-top:10px; color:var(--muted); font-size:0.88rem; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.meta-item { display:flex; align-items:center; gap:8px; color:var(--muted); }
+.meta-item i { color:var(--muted); font-size:0.96rem; }
+
+/* Right side: match badge area
+   badge is circular green with gradient, white percentage text, green border glow
+*/
+.job-right { display:flex; align-items:flex-start; justify-content:flex-end; min-width:140px; }
+.match-pill {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:8px;
+  border-radius:999px;
+  background: rgba(10,12,14,0.4);
+  border: 1px solid rgba(255,255,255,0.03);
+  min-width:86px;
+  text-align:center;
+  position:relative;
+}
+
+/* circular green badge */
+.match-percent {
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:1.08rem;
+  color:#05261d; /* dark text for contrast with bright green interior like screenshot */
+  background: linear-gradient(180deg,#79ffc7,#2ff6a6); /* bright green gradient */
+  box-shadow: 0 8px 30px rgba(46,246,168,0.22), 0 0 18px rgba(46,246,168,0.12);
+  border: 4px solid rgba(46,246,168,0.18); /* outer green ring */
+  transform-origin:center;
+  animation: badge-pulse 2.8s infinite;
+}
+
+/* label below badge */
+.match-label { font-size:0.74rem; color:var(--muted); margin-top:4px; }
+
+/* description */
+.job-desc {
+  color:#a9bac1;
+  font-size:0.94rem;
+  margin:12px 0 14px 0;
+}
+
+/* Requirements section */
+.section { margin:10px 0; }
+.section-heading {
+  display:flex; gap:10px; align-items:center;
+  color:var(--nearwhite-blue);
+  font-weight:700;
+  font-size:0.95rem;
+}
+.tags-row { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+
+.chip {
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:0.82rem;
+  font-weight:600;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(255,255,255,0.01));
+  color:#e9fbf6;
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+/* why box (purple tinted) */
+.why-box {
+  margin-top:12px;
+  border-radius:12px;
+  padding:14px;
+  background: linear-gradient(180deg, rgba(28,18,34,0.45), rgba(16,12,24,0.42));
+  border:1px solid rgba(180,120,255,0.08);
+}
+.why-title { color:#d8c9ff; font-weight:700; display:flex; gap:10px; margin-bottom:8px; }
+.why-list { list-style:none; margin:0; padding:0; color:#dbe8f0; font-size:0.92rem; }
+.why-list li { display:flex; gap:12px; align-items:flex-start; padding:6px 0; }
+.why-list li i { color:#b89cff; margin-top:4px; font-size:0.8rem; }
+
+/* benefits chips (pinkish) */
+.chip.benefit {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+  border:1px solid rgba(255,80,110,0.12);
+  color:#ffdfe6;
+  box-shadow: 0 6px 14px rgba(255,40,90,0.03);
+}
+
+/* footer */
+.card-footer { display:flex; justify-content:space-between; align-items:center; margin-top:14px; gap:12px; }
+.footer-left { display:flex; gap:14px; align-items:center; color:var(--muted); font-size:0.86rem; }
+.footer-left i { color:var(--muted); }
+.footer-right { display:flex; gap:12px; }
+
+/* Footer buttons: purple + green */
+.btn {
+  padding:9px 14px;
+  border-radius:10px;
+  font-weight:700;
+  font-size:0.9rem;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.btn.secondary {
+  background: linear-gradient(90deg,#7b4ff2,#b06ffb);
+  color:#fff;
+  border:1px solid rgba(160,110,240,0.14);
+  box-shadow: 0 8px 26px rgba(120,60,200,0.06);
+}
+.btn.primary {
+  background: linear-gradient(90deg,#3ef0b3,#24d394);
+  color:#05261d;
+  border:1px solid rgba(46,246,168,0.16);
+  box-shadow: 0 10px 34px rgba(46,246,168,0.08);
+}
+
+/* ---------- Responsiveness ---------- */
+@media (max-width:900px) {
+  .matches-container { padding-left:22px; padding-right:22px; }
+  .job-right { min-width:120px; }
+  .match-percent { width:52px; height:52px; font-size:1rem; }
+}
+
+@media (max-width:700px) {
+  .matches-header { flex-direction:column; align-items:flex-start; gap:12px; }
+  .mh-right { align-self:flex-end; }
+  .summary-row { flex-direction:column; gap:12px; }
+  .header-row { flex-direction:column; gap:12px; }
+  .job-right { width:100%; justify-content:flex-start; }
+  .match-pill { align-self:flex-start; }
+  .job-card-inner { padding:18px; }
+  .matches-container { padding-left:18px; padding-right:18px; }
+}
+
+/* ---------- Animations ---------- */
+@keyframes badge-pulse {
+  0% { transform: scale(1); filter:brightness(1); }
+  50% { transform: scale(1.04); filter:brightness(1.06); }
+  100% { transform: scale(1); filter:brightness(1); }
+}

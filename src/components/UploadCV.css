@@ -1,0 +1,268 @@
+/* UploadCV.css - Perfectly matching the design */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --page-bg-1: #050608;
+  --page-bg-2: #040507;
+  --muted: #8b9bad;
+  --cyan-text: #00dfff;
+  --cyan-glow: rgba(0, 223, 255, 0.15);
+  --card-bg: rgba(18, 20, 25, 0.9);
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Main page */
+.uploadcv-page {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(180deg, var(--page-bg-1), var(--page-bg-2));
+  font-family: "Poppins", system-ui, sans-serif;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Central container */
+.uploadcv-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Header */
+.uploadcv-header {
+  margin-bottom: 32px;
+}
+
+.go-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.go-back:hover {
+  color: var(--cyan-text);
+}
+
+/* Content area */
+.uploadcv-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Title section */
+.uploadcv-title {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.uploadcv-title h1 {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--cyan-text), #5fd8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.uploadcv-title p {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Main card */
+.uploadcv-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* Upload section */
+.upload-section {
+  padding: 40px;
+}
+
+/* Upload icon section */
+.upload-icon {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 223, 255, 0.1);
+  border: 1px solid rgba(0, 223, 255, 0.2);
+  box-shadow: 0 8px 24px var(--cyan-glow);
+}
+
+.upload-icon h2 {
+  color: var(--cyan-text);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.upload-icon p {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 32px 0;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 1px;
+  background: var(--cyan-text);
+  opacity: 0.3;
+}
+
+/* Drag and drop area */
+.uploadcv-dragarea {
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 48px 32px;
+  background: rgba(255, 255, 255, 0.02);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.uploadcv-dragarea:hover {
+  border-color: rgba(0, 223, 255, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.drag-icon {
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.uploadcv-dragarea h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.uploadcv-dragarea > p {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.choose-btn {
+  background: linear-gradient(90deg, var(--cyan-text), #7ad8ff);
+  color: #021014;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 223, 255, 0.3);
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.choose-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 223, 255, 0.4);
+}
+
+.file-info {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .uploadcv-page {
+    padding: 20px 16px;
+  }
+  
+  .upload-section {
+    padding: 32px 24px;
+  }
+  
+  .uploadcv-dragarea {
+    padding: 32px 24px;
+  }
+  
+  .uploadcv-title h1 {
+    font-size: 20px;
+  }
+  
+  .uploadcv-title p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-section {
+    padding: 24px 20px;
+  }
+  
+  .uploadcv-dragarea {
+    padding: 24px 20px;
+  }
+  
+  .icon-circle {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .icon-circle svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .drag-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+}

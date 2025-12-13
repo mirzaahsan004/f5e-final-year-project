@@ -1,0 +1,242 @@
+/* ========== Page + Container ========== */
+.jobsearch-body {
+  background: #0b0d10;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+}
+
+/* Important: give the container horizontal padding equal to card inner padding
+   so headers align with card content */
+.jobsearch-container {
+  width: 92%;
+  max-width: 980px;
+  padding: 0 34px; /* aligns header text with card inner content */
+  box-sizing: border-box;
+}
+
+/* ========== Header ========== */
+.jobsearch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+/* Left: Go Back */
+.go-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  background: rgba(255,255,255,0.04);
+  color: #bdbdbd;
+  cursor: pointer;
+  transition: 0.18s ease;
+  flex: 0 0 auto;
+}
+
+.go-back i {
+  color: #18bfff;
+  font-size: 1rem;
+}
+
+.go-back:hover {
+  color: #18bfff;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 0 10px rgba(24, 191, 255, 0.25);
+}
+
+/* Center (but left-aligned to match card) */
+.jobsearch-title {
+  flex: 1 1 auto;
+  text-align: left;           /* important: start at same column as card */
+  min-width: 0;
+}
+
+.jobsearch-title h2 {
+  font-size: 1.38rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #bfeeff;             /* slightly bright bluish (page heading) */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 0 0 10px rgba(31,183,255,0.22);
+}
+
+.jobsearch-title h2 i {
+  color: #1fb7ff;
+}
+
+.jobsearch-title p {
+  margin: 0;
+  font-size: 0.90rem;
+  color: #9eaab4;
+  line-height: 1.1;
+}
+
+/* Right: Smart Match */
+.smart-match {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c79bff;
+  font-size: 0.88rem;
+  font-weight: 500;
+  flex: 0 0 auto;
+}
+
+.smart-match i {
+  color: #d7aaff;
+}
+
+/* ========== Card ========== */
+.jobsearch-card {
+  background: rgba(17,19,24,0.95);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 0 22px rgba(24,183,255,0.06);
+  padding: 34px;              /* same value as container horizontal padding above */
+  margin-bottom: 30px;
+}
+
+/* ========== Natural Language Search (inside card) ========== */
+.search-section {
+  margin-bottom: 26px;
+}
+
+/* THIS IS KEY: almost-white bluish — matches the screenshot look */
+.search-section h3 {
+  font-size: 1.0rem;
+  font-weight: 600;
+  color: #eef9ff;             /* near-white with bluish tint */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px 0;
+  text-shadow: none;
+}
+
+.search-section h3 i {
+  color: #1fb7ff;
+}
+
+/* Input + button */
+.search-input-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search-input-group input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.search-input-group input::placeholder {
+  color: #9ea8af;
+}
+
+/* Search btn: kept vibrant but balanced */
+.search-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  background: #18bfff;
+  border: none;
+  color: #04212a;
+  cursor: pointer;
+  transition: 0.18s;
+}
+
+.search-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(24,191,255,0.16);
+}
+
+/* ========== Filters Row (inside card) ========== */
+.filters-row {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.filter-box {
+  flex: 1 1 0;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-box label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f1fbff;             /* lighter / almost-white bluish for label text */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-box label i {
+  color: #1fb7ff;
+  font-size: 0.98rem;
+}
+
+.filter-box select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #ffffff;
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+.filter-box select:focus {
+  outline: none;
+  border-color: #1fb7ff;
+  box-shadow: 0 0 12px rgba(31,183,255,0.18);
+}
+
+/* ========== Responsive tweaks ========== */
+@media (max-width: 880px) {
+  .jobsearch-header { gap: 10px; }
+  .jobsearch-title h2 { font-size: 1.18rem; }
+}
+
+@media (max-width: 700px) {
+  .jobsearch-container { padding: 0 18px; }
+  .jobsearch-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .jobsearch-title { text-align: left; }
+  .filters-row { flex-direction: column; gap: 12px; }
+  .search-input-group { flex-direction: column; gap: 10px; }
+  .search-btn { width: 100%; justify-content: center; }
+}

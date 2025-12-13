@@ -1,0 +1,121 @@
+/* src/components/Login.css (replace) */
+.login-card{
+  width:420px;
+  border-radius: 14px;
+  padding: 28px 34px;
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(6px);
+}
+
+.login-top{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  margin-bottom: 12px;
+}
+.brain-small{ filter: drop-shadow(0 10px 20px rgba(0,176,255,0.08)); }
+
+.login-title{
+  margin:0;
+  color:var(--neon-cyan-start);
+  font-size:22px;
+  font-weight:600;
+  text-transform:uppercase;
+}
+.login-sub{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  text-align:center;
+  margin-bottom: 14px;
+}
+
+/* form */
+.login-form{ display:flex; flex-direction:column; gap:12px; }
+.field{ display:flex; flex-direction:column; gap:8px; }
+.label-text{ color:var(--muted); font-size:12px; }
+.input{
+  padding:12px 14px;
+  border-radius:10px;
+  background: rgba(255,255,255,0.02);
+  color:var(--text-primary);
+  border: 1px solid rgba(255,255,255,0.04);
+  outline:none;
+  font-size:14px;
+}
+.input::placeholder{ color: rgba(255,255,255,0.32); }
+
+/* primary login button */
+.btn-primary{
+  margin-top:6px;
+  padding:12px;
+  border-radius:10px;
+  background: linear-gradient(90deg, var(--neon-cyan-start), var(--neon-cyan-end));
+  color:#021014;
+  font-weight:700;
+  border:none;
+  cursor:pointer;
+  box-shadow: 0 10px 28px rgba(0,180,255,0.10);
+}
+
+/* error */
+.login-error{
+  background:#2a0b0b;
+  color:#ffb3b3;
+  padding:10px;
+  border-radius:8px;
+  font-size:13px;
+}
+
+/* bottom row */
+.login-foot{
+  display:flex;
+  justify-content:space-between;
+  margin-top:8px;
+  align-items:center;
+  font-size:13px;
+  color:var(--muted);
+}
+.login-foot .remember input{ margin-right:8px; transform: translateY(2px); }
+.login-foot .forgot{ color:var(--muted); text-decoration:none; cursor:pointer; }
+.login-foot .forgot:hover{ text-decoration:underline; color:var(--neon-cyan-end); }
+
+/* create account line */
+.create-account{
+  margin-top:12px;
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  align-items:center;
+  font-size:14px;
+  color:var(--muted);
+}
+.signup-link{
+  color:var(--neon-green);
+  text-decoration:none;
+  font-weight:600;
+}
+.signup-link:hover{
+  text-decoration:underline;
+}
+
+/* adapt colors for light theme (inputs subtle border) */
+body.light-theme .input {
+  background: rgba(2,6,23,0.02);
+  border: 1px solid rgba(2,6,23,0.06);
+  color: var(--text-primary);
+}
+body.light-theme .login-card {
+  box-shadow: var(--card-shadow);
+}
+body.light-theme .btn-primary {
+  box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+}
+
+/* responsive */
+@media (max-width:480px){
+  .login-card{ width:92%; padding: 18px; }
+}

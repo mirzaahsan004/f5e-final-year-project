@@ -1,0 +1,501 @@
+/* Dashboard.css - Perfectly matching the image design with natural card heights */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --page-bg-1: #050608;
+  --page-bg-2: #040507;
+  --muted: #8b9bad;
+  --dark-bg: #0a0c0f;
+  
+  /* Cyan colors for Upload CV card */
+  --cyan-text: #00dfff;
+  --cyan-glow: rgba(0, 223, 255, 0.25);
+  --cyan-bg: rgba(0, 176, 255, 0.08);
+  
+  /* Purple colors for Job Keywords card */
+  --purple-text: #9b6bff;
+  --purple-glow: rgba(155, 107, 255, 0.25);
+  --purple-bg: rgba(155, 107, 255, 0.08);
+  
+  /* Green colors for Job Matches card */
+  --green-text: #2ee6b8;
+  --green-glow: rgba(46, 230, 184, 0.25);
+  --green-bg: rgba(46, 230, 184, 0.08);
+  
+  --card-radius: 12px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page */
+.dashboard-page {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(180deg, var(--page-bg-1), var(--page-bg-2));
+  font-family: "Poppins", system-ui, sans-serif;
+  color: #ffffff;
+}
+
+/* Header */
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.welcome-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00dfff, #5fd8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+}
+
+.welcome-sub {
+  margin: 6px 0 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Top navigation */
+.top-actions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-item {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #00dfff;
+}
+
+/* Features grid - 3 equal columns */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+/* Feature card base - natural height */
+.feature-card {
+  position: relative;
+  padding: 22px;
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Feature icon - subtle empty circle */
+.feature-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 14px;
+  position: relative;
+}
+
+/* Card specific backgrounds - much more subtle */
+.card-cyan {
+  background: 
+    radial-gradient(ellipse at 10% 20%, var(--cyan-bg), transparent 70%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(6, 8, 10, 0.95));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card-cyan .feature-icon {
+  box-shadow: 
+    0 0 0 1px rgba(0, 223, 255, 0.15),
+    0 4px 12px var(--cyan-glow);
+  background: rgba(0, 223, 255, 0.05);
+}
+
+.card-cyan .feature-title {
+  color: var(--cyan-text);
+}
+
+.card-purple {
+  background: 
+    radial-gradient(ellipse at 10% 20%, var(--purple-bg), transparent 70%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(6, 8, 10, 0.95));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card-purple .feature-icon {
+  box-shadow: 
+    0 0 0 1px rgba(155, 107, 255, 0.15),
+    0 4px 12px var(--purple-glow);
+  background: rgba(155, 107, 255, 0.05);
+}
+
+.card-purple .feature-title {
+  color: var(--purple-text);
+}
+
+.card-green {
+  background: 
+    radial-gradient(ellipse at 10% 20%, var(--green-bg), transparent 70%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(6, 8, 10, 0.95));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card-green .feature-icon {
+  box-shadow: 
+    0 0 0 1px rgba(46, 230, 184, 0.15),
+    0 4px 12px var(--green-glow);
+  background: rgba(46, 230, 184, 0.05);
+}
+
+.card-green .feature-title {
+  color: var(--green-text);
+}
+
+.feature-title {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.feature-sub {
+  margin: 0 0 18px 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+  flex-grow: 1;
+  font-weight: 400;
+}
+
+.feature-btn {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #021014;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Lower grid - Perfect column sizing */
+.lower-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Recent Activity takes 2/3, Quick Stats takes 1/3 */
+  gap: 18px;
+  align-items: start;
+}
+
+/* Recent Activity Card - Same width as first two feature cards combined */
+.recent-card {
+  padding: 20px;
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: 
+    radial-gradient(ellipse at 0% 0%, rgba(0, 176, 255, 0.04), transparent 60%),
+    radial-gradient(ellipse at 100% 0%, rgba(155, 107, 255, 0.04), transparent 60%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(6, 8, 10, 0.95));
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  /* Natural height - no fixed height */
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-header h4 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.view-all {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: color 0.2s ease;
+}
+
+.view-all:hover {
+  color: #00dfff;
+}
+
+/* Activity list - Dark background rows */
+.activity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--dark-bg); /* Dark black background like in the image */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.2s ease;
+}
+
+.activity-item:hover {
+  background: #0d0f12;
+}
+
+.act-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+/* Activity icon - subtle circles */
+.act-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  background: 
+    linear-gradient(135deg, rgba(0, 223, 255, 0.08) 0%, rgba(155, 107, 255, 0.08) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 2px 8px rgba(0, 176, 255, 0.1),
+    0 2px 8px rgba(155, 107, 255, 0.1);
+}
+
+.act-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.act-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.act-sub {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.act-right {
+  text-align: right;
+  min-width: 70px;
+}
+
+.act-score {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2ee6b8;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.act-time {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+/* Stats Card - Same width as Job Matches card, natural height */
+.stats-card {
+  padding: 20px;
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: 
+    radial-gradient(ellipse at 0% 0%, rgba(46, 230, 184, 0.04), transparent 60%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(6, 8, 10, 0.95));
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  /* Natural height - no fixed height */
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-title {
+  margin: 0 0 16px 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Score display - properly sized like in the image */
+.score-display {
+  margin-bottom: 16px;
+  padding: 16px;
+  background: var(--dark-bg); /* Dark background like activity items */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-text {
+  font-size: 28px; /* Adjusted to match image proportion */
+  font-weight: 800;
+  color: #2ee6b8;
+  margin-bottom: 4px;
+  line-height: 1;
+  text-shadow: 0 0 15px rgba(46, 230, 184, 0.2);
+}
+
+.score-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-between; /* Side by side like in image */
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.metric-num {
+  font-size: 16px; /* Slightly smaller to fit better */
+  font-weight: 800;
+  color: #e2e8f0;
+  line-height: 1;
+}
+
+.metric-num.highlight {
+  color: #2ee6b8;
+}
+
+.metric-sub {
+  font-size: 11px; /* Smaller to fit the compact design */
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.report-btn {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #2ee6b8, #ff8c8c);
+  color: #021014;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .lower-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-page {
+    padding: 20px 16px;
+  }
+  
+  .dash-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .top-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .feature-card {
+    padding: 18px;
+  }
+  
+  .metrics {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

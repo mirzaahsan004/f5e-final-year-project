@@ -1,0 +1,11 @@
+/* src/components/Signup.css
+   Reuses same classes as Login.css so visual theme is identical.
+   Keep this file if you want separate overrides; otherwise Login.css styles will apply.
+*/
+
+/* For now, it's identical to Login.css; copy/paste Login.css contents or import them.
+   But include small overrides only if necessary. */
+
+@import "./Login.css";
+
+/* If you want a tiny spacing tweak for signup, you can add here */
